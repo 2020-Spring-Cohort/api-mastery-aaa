@@ -13,9 +13,14 @@ public class Price {
     @Id
     @GeneratedValue
     private Long id;
+
     private Date date;
     private float price;
-
+    private float lowPrice;
+    private float highPrice;
+    private float openPrice;
+    private float closePrice;
+    private float volume;
 
 
     @ManyToOne
