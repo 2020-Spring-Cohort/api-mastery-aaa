@@ -5,12 +5,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.util.Date;
 
-@Entity
+
 public class Price {
-    @Id
+
     private Date date;
 
-    @ManyToOne
+
     private Stock stock;
 
     private float highPrice;

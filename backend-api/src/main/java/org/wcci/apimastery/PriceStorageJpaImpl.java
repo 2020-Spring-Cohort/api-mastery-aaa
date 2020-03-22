@@ -3,8 +3,10 @@ package org.wcci.apimastery;
 
 import org.springframework.stereotype.Service;
 import org.wcci.apimastery.Classes.Price;
+import org.wcci.apimastery.Classes.Stock;
 import org.wcci.apimastery.PriceRepository;
 import java.util.Collection;
+import java.util.Date;
 
 
 @Service
@@ -18,6 +20,12 @@ public class PriceStorageJpaImpl implements PriceStorage {
     public Collection<Price> findAllPrices(){
         return (Collection<Price>) priceRepository.findAll();
     }
+
+    @Override
+    public Price findStockPriceOnDate(Date d, Stock s) {
+        return priceRepository.findByDateAndStock(d,s);
+    }
+
     @Override
     public void store(Price price){
         priceRepository.save(price);

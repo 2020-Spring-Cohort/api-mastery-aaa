@@ -7,19 +7,18 @@ import javax.persistence.OneToMany;
 import java.util.Collection;
 import java.util.HashSet;
 
-@Entity
+
 public class Stock {
     public Stock(){};
 
-    @Id
-    @GeneratedValue
+
     private Long id;
 
     //this is the current price updated in real time
     private float var_price;
 
     //These are for price index such as historical prices
-    @OneToMany
+
     Collection<Price> prices;
 
     public Stock(String title){
