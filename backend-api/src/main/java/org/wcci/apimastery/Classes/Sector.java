@@ -14,10 +14,9 @@ public class Sector {
     @GeneratedValue
     private Long id;
 
-    @OneToMany(mappedBy = "Sector")
+    @OneToMany(mappedBy = "sector")
     Collection<Stock> stocks;
-    @OneToMany(mappedBy = "Sector")
-    private Collection<Price> prices;
+
 
     private String name;
 
@@ -35,7 +34,5 @@ public class Sector {
     public String getName(){
         return name;
     }
-    public Collection<Price> getPrices(){
-        return prices;
-    }
+
 }

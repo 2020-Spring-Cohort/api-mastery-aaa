@@ -39,7 +39,7 @@ public class PriceControllerTest {
         underTest = new PriceController(priceRepository);
         testSector = new Sector("Emerging Markets");
         testStock = new Stock("Europe Extreme",testSector);
-        testPrice = new Price(45L,testSector, testStock, testDate);
+        testPrice = new Price(testStock, testDate);
         when(priceRepository.findAll()).thenReturn(Collections.singleton(testPrice));
         mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();
         priceStorage = mock(PriceStorage.class);

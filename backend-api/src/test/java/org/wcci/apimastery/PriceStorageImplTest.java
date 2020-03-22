@@ -29,8 +29,8 @@ public class PriceStorageImplTest {
         underTest = new PriceStorageJpaImpl(priceRepository);
         testSector = new Sector("HealthCare");
         testStock = new Stock("ABC Inc", testSector);
-        testPrice1 = new Price(23L,testSector, testStock, testDate);
-        testPrice2 = new Price(24L,testSector, testStock, testDate);
+        testPrice1 = new Price(testStock, testDate);
+        testPrice2 = new Price(testStock, testDate);
 
     }
     @Test
