@@ -7,15 +7,20 @@ import java.util.Date;
 
 @Entity
 public class Price {
-
-
     @Id
     private Date date;
 
-    private float price;
-
     @ManyToOne
     private Stock stock;
+
+    private float highPrice;
+    private float lowPrice;
+    private float openPrice;
+    private float closePrice;
+
+    private float volume;
+
+
 
 
 }

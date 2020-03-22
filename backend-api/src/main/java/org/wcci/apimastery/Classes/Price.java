@@ -15,7 +15,8 @@ public class Price {
     private Long id;
     private Date date;
     private float price;
-    private Sector sector;
+
+
 
     @ManyToOne
     private Stock stock;
@@ -39,13 +40,10 @@ public class Price {
         return price;
     }
 
-    public Sector getSector() {
-        return sector;
-    }
 
-    public Price(Long price, Sector sector, Stock stock, Date date){
+    public Price(Long price, Stock stock, Date date){
         this.price = price;
-        this.sector = sector;
+
         this.stock = stock;
         this.date = date;
 

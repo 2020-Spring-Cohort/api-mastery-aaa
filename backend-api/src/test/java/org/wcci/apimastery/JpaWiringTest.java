@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.test.annotation.DirtiesContext;
 import org.wcci.apimastery.Classes.Price;
 import org.wcci.apimastery.Classes.Sector;
 import org.wcci.apimastery.Classes.Stock;
@@ -14,6 +15,7 @@ import java.util.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@DirtiesContext
 @DataJpaTest
 public class JpaWiringTest {
     @Autowired
