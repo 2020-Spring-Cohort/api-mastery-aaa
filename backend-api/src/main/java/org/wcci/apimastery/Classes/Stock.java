@@ -1,6 +1,8 @@
 package org.wcci.apimastery.Classes;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,10 +18,12 @@ public class Stock {
     @GeneratedValue
     private long id;
 
+    @JsonIgnore
     @ManyToOne
     private Sector sector;
 
     //these are historical prices in their own class tied to a stock
+    @JsonIgnore
     @OneToMany(mappedBy = "stock")
     private  Collection<Price> prices;
 
@@ -32,6 +36,7 @@ public class Stock {
         this.sector = sector;
         this.prices = new HashSet<>();
     }
+
 
     protected Stock(){}
 
@@ -50,4 +55,12 @@ public class Stock {
         return prices;
      }
 
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", sector=" + sector +
+                '}';
+    }
 }

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.wcci.apimastery.Classes.Sector;
+import org.wcci.apimastery.Classes.Stock;
 import org.wcci.apimastery.Controllers.SectorController;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -19,12 +20,14 @@ public class SectorControllerTest {
 
     private SectorController underTest;
     private SectorRepository sectorRepository;
+    private StockRepository stockRepo;
     private Sector testSector;
 
     @BeforeEach
     void setUp(){
         sectorRepository = mock(SectorRepository.class);
-        underTest = new SectorController(sectorRepository);
+        stockRepo = mock(StockRepository.class);
+        underTest = new SectorController(sectorRepository, stockRepo);
         testSector = new Sector("Tech");
         when(sectorRepository.findAll()).thenReturn(Collections.singleton(testSector));
 //        when(sectorRepository.findAllById(1)).thenReturn(java.util.Optional.ofNullable(testSector));
