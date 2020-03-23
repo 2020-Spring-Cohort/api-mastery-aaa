@@ -16,7 +16,6 @@
             <div class="full-span">
                 <h1>All Sectors</h1>
             </div>
-
             <div class="sector-index--single-sector">
                 <div class="single-sector--header">Energy</div>
                 <div class="single-sector--chart"></div>
@@ -28,7 +27,6 @@
                     <div> NTFX </div>
                 </div>
             </div>
-
             <div class="sector-index--single-sector">
                 <div class="single-sector--header">Materials</div>
                 <div class="single-sector--chart"></div>
@@ -41,7 +39,6 @@
                     <div> NTFX </div>
                 </div>
             </div>
-
             <div class="sector-index--single-sector">
                 <div class="single-sector--header">Industrials</div>
                 <div class="single-sector--chart"></div>
@@ -54,7 +51,6 @@
                     <div> NTFX </div>
                 </div>
             </div>
-
             <div class="sector-index--single-sector">
                 <div class="single-sector--header">Health Care</div>
                 <div class="single-sector--chart"></div>
@@ -67,7 +63,6 @@
                     <div> NTFX </div>
                 </div>
             </div>
-
             <div class="sector-index--single-sector">
                 <div class="single-sector--header">Financials</div>
                 <div class="single-sector--chart"></div>
@@ -101,7 +96,6 @@
 </body>
 <script>
 const sectorIndex = document.querySelector('.sector-index');
-
 const MakeSectorElement = (sectorJson) => {
     console.log(sectorJson);
     sectorJson.forEach((sector) => {
@@ -118,7 +112,6 @@ const MakeSectorElement = (sectorJson) => {
         sectorTopMovers = document.createElement('DIV');
         sectorTopMovers.classList.add('single-sector--top-movers');
 
-
         sectorIndex.append(sectorElement);
         sectorElement.append(sectorTitle);
         sectorElement.append(sectorChart);
@@ -132,21 +125,17 @@ const MakeSectorElement = (sectorJson) => {
             sectorTopMovers.append(stockTopMover);
         });
     });
-
 }
-
 const addSectors = (sectors) => {
     sectors.forEach((sector) => {
         sectorIndex.append()
     });
 }
-
 const getAllSectors = () => {
     fetch('http://localhost:8080/sectors/')
         .then(response => response.json())
         .then(sectorJSON => MakeSectorElement(sectorJSON));
 }
-
 getAllSectors();
 
 </script>
