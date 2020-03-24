@@ -19,19 +19,19 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String...args) throws Exception{
-        Sector emergingMarkets = new Sector("Emerging Markets");
+        Sector emergingMarkets = new Sector("Emerging Markets","Encompasses a broad range of companies from emerging markets around the world.");
         sectorRepository.save(emergingMarkets);
-        Sector healthCare = new Sector("HealthCare");
+        Sector healthCare = new Sector("HealthCare","Consists of businesses that provide medical services, manufacture medical equipment or drugs, provide medical insurance, or otherwise facilitate the provision of healthcare to patients.");
         sectorRepository.save(healthCare);
-        Sector technology   = new Sector("Technology");
+        Sector technology   = new Sector("Technology","Encompasses relating to the research, development and/or distribution of technologically based goods and services.");
         sectorRepository.save(technology);
-        Sector communicationServices = new Sector("Communication Services");
+        Sector communicationServices = new Sector("Communication Services","Contains companies that provide communications services primarily through a fixed-line, cellular, wireless, high bandwidth and/or fiber optic cable network.");
         sectorRepository.save(communicationServices);
-        Sector energy = new Sector("Energy");
+        Sector energy = new Sector("Energy","Includes companies involved in the exploration and development of oil or gas reserves, oil and gas drilling,refining, or producing/supplying energy.");
         sectorRepository.save(energy);
-        Sector realEstate = new Sector("Real Estate");
+        Sector realEstate = new Sector("Real Estate","Includes companies that own, develop, and manage residential, commercial, and industrial properties.");
         sectorRepository.save(realEstate);
-        Sector financials = new Sector("Financials");
+        Sector financials = new Sector("Financials","Comprised of firms and institutions which provide financial services to commercial and retail customers.");
         sectorRepository.save(financials);
 
         Stock alibabGroupHolding = new Stock("Alibaba Group Holding",emergingMarkets,"BABA");

@@ -24,4 +24,5 @@ public class SectorController {
     public Sector retrieveSingleSector(@PathVariable Long id){
         return sectorRepository.findById(id).get();
     }
+
 }
