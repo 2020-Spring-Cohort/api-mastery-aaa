@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 public class Stock {
 
+    private String ticker;
     private String name;
 
     @Id
@@ -27,9 +28,10 @@ public class Stock {
     //this is a single price which fluctuates in the day, does not get saved
     private float var_price;
 
-    public Stock(String name, Sector sector){
+    public Stock(String name, Sector sector, String ticker){
         this.name = name;
         this.sector = sector;
+        this.ticker = ticker;
         this.prices = new HashSet<>();
     }
 
@@ -45,7 +47,7 @@ public class Stock {
      public Sector getSector(){
         return sector;
      }
-
+     public String getTicker(){ return  ticker;}
      public Collection<Price> getPrices(){
         return prices;
      }
