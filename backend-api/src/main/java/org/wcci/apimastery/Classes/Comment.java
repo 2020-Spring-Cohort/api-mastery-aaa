@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -18,6 +19,8 @@ public class Comment {
     private long id;
 
     private String text;
+
+    private Date date;
 
     @ManyToOne
     private Sector sector;
@@ -34,7 +37,6 @@ public class Comment {
 
     public Comment(String text){
         this.text= text;
-
     }
     public long getId(){
         return id;

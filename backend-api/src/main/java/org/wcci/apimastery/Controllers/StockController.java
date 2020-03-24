@@ -3,6 +3,7 @@ package org.wcci.apimastery.Controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.wcci.apimastery.Classes.Stock;
 import org.wcci.apimastery.StockRepository;
@@ -12,6 +13,7 @@ import java.util.Collection;
 @RestController
 public class StockController {
     private StockRepository stockRepository;
+
     public StockController(StockRepository stockRepository){
         this.stockRepository = stockRepository;
     }
@@ -23,4 +25,11 @@ public class StockController {
     public Stock retrieveSingleStock(@PathVariable Long id){
         return stockRepository.findById(id).get();
     }
+
+    @GetMapping("/{name}")
+    public Stock retrievedSingleStockName(@PathVariable String name){
+       return stockRepository.findByName(name);
+    }
+
+
 }
