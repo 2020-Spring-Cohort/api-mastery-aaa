@@ -22,11 +22,6 @@ public class PriceStorageJpaImpl implements PriceStorage {
     }
 
     @Override
-    public Price findStockPriceOnDate(Date d, Stock s) {
-        return priceRepository.findByDateAndStock(d,s);
-    }
-
-    @Override
     public void store(Price price){
         priceRepository.save(price);
     }

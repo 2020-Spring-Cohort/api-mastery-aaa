@@ -19,8 +19,5 @@ public class PriceController {
     public Collection<Price>retrievePrices(){
         return (Collection<Price>) priceRepository.findAll();
         }
-    @GetMapping("/prices/{id}")
-    public Price retrieveSinglePrice(@PathVariable Long id){
-        return priceRepository.findById(id).get();
-    }
+
 }

@@ -14,7 +14,7 @@ import org.wcci.apimastery.Controllers.PriceController;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -39,6 +39,7 @@ public class PriceControllerTest {
         underTest = new PriceController(priceRepository);
         testSector = new Sector("Emerging Markets");
         testStock = new Stock("Europe Extreme",testSector);
+        testDate = new Date(2012-11-12);
         testPrice = new Price(testStock, testDate);
         when(priceRepository.findAll()).thenReturn(Collections.singleton(testPrice));
         mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();

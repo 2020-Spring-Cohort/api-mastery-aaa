@@ -11,7 +11,7 @@ import org.wcci.apimastery.Classes.Price;
 import org.wcci.apimastery.Classes.Sector;
 import org.wcci.apimastery.Classes.Stock;
 
-import java.util.Date;
+import java.sql.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -38,8 +38,8 @@ public class JpaWiringTest {
 
     @BeforeEach
     void setUp(){
-        testDate1 = new Date(2000, 0, 28);
-        testDate2 = new Date(2000, 11, 27);
+        testDate1 = new Date(1585019817108L);
+        testDate2 = new Date(1224734400000L);
         testSector = new Sector("testSector");
         testStock1 = new Stock("testName1", testSector);
         testStock2 = new Stock("testName2",testSector);
@@ -69,20 +69,19 @@ public class JpaWiringTest {
         stockRepository.save(testStock1);
 
 
-//        entityManager.flush();
-//        entityManager.clear();
+        entityManager.flush();
+        entityManager.clear();
 
         Stock retrievedStock = stockRepository.findById(testStock1.getId()).get();
         Date retrievedDate1 = testPrice1.getDate();
         Date retrievedDate2 = testPrice2.getDate();
-        Price retrievedPrice1 = priceRepository.findByDateAndStock(retrievedDate1, retrievedStock);
-        Price retrievedPrice2 = priceRepository.findByDateAndStock(retrievedDate2, retrievedStock);
+        Price retrievedPrice1 = priceRepository.findByDateAndStock(retrievedDate1, retrievedStock).get();
+        Price retrievedPrice2 = priceRepository.findByDateAndStock(retrievedDate2, retrievedStock).get();
         assertThat(retrievedStock.getName()).isEqualTo("testName1");
-        assertThat(retrievedPrice1.getStock()).isEqualTo(testStock1);
         System.out.println("Prices: " + retrievedStock.getPrices());
         System.out.println("Date1 " + retrievedDate1);
         System.out.println("Date2 " + retrievedDate2);
-        assertThat(retrievedStock.getPrices()).contains(retrievedPrice1);
+        assertThat(retrievedStock.getPrices()).contains(retrievedPrice1, retrievedPrice2);
 
     }
 
