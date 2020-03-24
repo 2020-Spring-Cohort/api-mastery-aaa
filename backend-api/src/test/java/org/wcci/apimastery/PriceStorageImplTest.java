@@ -8,7 +8,7 @@ import org.wcci.apimastery.Classes.Sector;
 import org.wcci.apimastery.Classes.Stock;
 
 import java.util.Collections;
-import java.util.Date;
+import java.sql.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
@@ -29,6 +29,7 @@ public class PriceStorageImplTest {
         underTest = new PriceStorageJpaImpl(priceRepository);
         testSector = new Sector("HealthCare");
         testStock = new Stock("ABC Inc", testSector);
+        testDate = new Date(2012-10-20);
         testPrice1 = new Price(testStock, testDate);
         testPrice2 = new Price(testStock, testDate);
 

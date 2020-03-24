@@ -23,10 +23,9 @@ public class Stock {
     private Sector sector;
 
     //these are historical prices in their own class tied to a stock
-    @JsonIgnore
-    @OneToMany(mappedBy = "stock")
-    private  Collection<Price> prices;
 
+    @OneToMany(mappedBy = "stock")
+    private Collection<Price> prices;
 
     //this is a single price which fluctuates in the day, does not get saved
     private float var_price;
@@ -34,7 +33,6 @@ public class Stock {
     public Stock(String name, Sector sector){
         this.name = name;
         this.sector = sector;
-        this.prices = new HashSet<>();
     }
 
 
@@ -61,6 +59,7 @@ public class Stock {
                 "name='" + name + '\'' +
                 ", id=" + id +
                 ", sector=" + sector +
+                ", var_price=" + var_price +
                 '}';
     }
 }
