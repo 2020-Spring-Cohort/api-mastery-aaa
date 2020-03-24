@@ -71,7 +71,7 @@ public class Price {
                 ", openPrice=" + openPrice +
                 ", closePrice=" + closePrice +
                 ", volume=" + volume +
-                ", stock=" + stock +
+
                 '}';
     }
 }

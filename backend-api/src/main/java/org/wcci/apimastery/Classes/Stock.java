@@ -24,7 +24,7 @@ public class Stock {
 
     //these are historical prices in their own class tied to a stock
     @JsonIgnore
-    @OneToMany(mappedBy = "stock")
+    @OneToMany
     private  Collection<Price> prices;
 
 

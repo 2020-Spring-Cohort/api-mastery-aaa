@@ -22,14 +22,7 @@ public class Comment {
 
     private Date date;
 
-    @ManyToOne
-    private Sector sector;
 
-    @ManyToOne
-    private Stock stock;
-
-    @ManyToOne
-    private Price price;
 
     public String getText(){
         return text;
@@ -44,13 +37,5 @@ public class Comment {
     public Comment(){
 
     }
-    public Sector getSector(){
-        return sector;
-    }
-    public Stock getStock(){
-        return stock;
-    }
-    public Price getPrice(){
-        return price;
-    }
+
 }

@@ -14,12 +14,7 @@ public class Rating {
     public long getId(){
         return id;
     }
-    @ManyToOne
-    private Sector sector;
-    @ManyToOne
-    private Stock stock;
-    @ManyToOne
-    private Price price;
+
 
     private int score;
     public int getScore(){
