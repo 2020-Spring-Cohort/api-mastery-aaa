@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
@@ -19,13 +20,15 @@ public class Sector {
     @OneToMany(mappedBy = "sector")
     Collection<Stock> stocks;
 
+    private String description;
 
     private String name;
 
     protected Sector(){
     }
-    public Sector(String name){
+    public Sector(String name, String description){
         this.name = name;
+        this.description = description;
     }
     public Long getId(){
         return id;
@@ -36,5 +39,9 @@ public class Sector {
     public String getName(){
         return name;
     }
+    public String  getDescription(){
+        return description;
+    }
+
 
 }

@@ -31,7 +31,7 @@ public class StockControllerTest {
         stockRepository = mock(StockRepository.class);
         underTest = new StockController(stockRepository);
         testSector = new Sector("Banking");
-        testStock = new Stock("testStock", testSector);
+        testStock = new Stock("testStock", testSector,"BABA");
         when(stockRepository.findAll()).thenReturn(Collections.singletonList(testStock));
         mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();
     }
