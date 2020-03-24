@@ -28,6 +28,7 @@ public class SectorController {
         return sectorRepository.findById(id).get();
     }
 
+<<<<<<< HEAD
     //this method adds a stock within the given sector
     @PatchMapping("/sectors/{sectorName}")
     public Sector addStock( @RequestBody Stock stockToPatch,
@@ -39,4 +40,6 @@ public class SectorController {
         return sectorToAddStockTo;
     }
 
+=======
+>>>>>>> 91dc0707ab754f6de8723346e6b1739dcc675101
 }

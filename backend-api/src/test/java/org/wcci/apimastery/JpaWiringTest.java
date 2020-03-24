@@ -35,14 +35,13 @@ public class JpaWiringTest {
     private Date testDate1;
     private Date testDate2;
 
-
     @BeforeEach
     void setUp(){
         testDate1 = new Date(1585019817108L);
         testDate2 = new Date(1224734400000L);
         testSector = new Sector("testSector");
-        testStock1 = new Stock("testName1", testSector);
-        testStock2 = new Stock("testName2",testSector);
+        testStock1 = new Stock("testName1", testSector,"testTicker1");
+        testStock2 = new Stock("testName2",testSector,"testTicker2");
         testPrice1 = new Price(testStock1, testDate1);
         testPrice2 = new Price(testStock1, testDate2);
         sectorRepository.save(testSector);
